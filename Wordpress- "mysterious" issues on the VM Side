@@ -8,4 +8,4 @@ If you’re experiencing an error in database connection, it’s important to ch
 It's important to have available disc storage in your MySQL database in order to keep the site up and running and prevent future crashes. Adding a swapfile is one way to create more disc storage in MySQL. According to the [Understanding Swap Files] (https://medium.com/@adebanjoemmanuel01/understanding-swap-files-1967fe8c5c89) page on the website "Medium", swap files create space to store lesser proccesses, ultimately freeing space in your RAM. Freeing up space in your RAM will allow your site to load quicker.
 
 #### H4 How to:
-If you want more information regarding how to add a swapfile, please see the [How to Add a Swap File] () page.
+If you want more information regarding how to add a swapfile, please see the [How to Add a Swap File] (https://github.com/hodgsonreads/7301Fall2026Documentation/blob/main/How%20to%20Add%20a%20Swap%20File) page.
