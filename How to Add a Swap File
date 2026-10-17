@@ -1,0 +1,41 @@
+# H1 Issue I experienced:
+When initially installing Wordpress last week, I was able to complete all of the steps with minimal issues.  However, when trying to load my site the next day, I received an error message.  The site said that it could not load.
+
+## H2 What I discovered:
+After looking through documentation, I found that a common reason for a Wordpress site not to load is due to a lack of storage/disc space on your VM.  I found this problem and used the following steps to get my website back up and running.
+
+### H3 Steps I took:
+Because my site would not load, I decided to check the system status of Mysql, using the following command:
+
+'sudo systemctl status mysql'
+
+I found that my system had “failed” when doing this command.  After reading through some documentation on Stack Overflow, I found that several people said their system was failing due to a lack of storage.  
+
+#### H4 To check this I tried the following commands:
+'free -h'
+'df -h /'
+
+I found that I had 0 GB left of storage on my disc.  In order to get Mysql up and running, I had to add more space using the following command:
+
+'sudo fallocate -l 1G /swapfile'
+
+##### H5 Next, I had to change the modifications so that only the root user could access the file using this command:
+
+'sudo chmod 600 /swapfile'
+
+###### H6 After that, I made a swap using the /swapfile to add more storage:
+'sudo mkswap /swapfile'
+
+
+####### H7 Then, I enabled the swapfile:
+'sudo swapon /swapfile'
+
+######## H8 Next, I had to make sure that the system would register this swap file every time the computer booted:
+
+'echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab'
+
+######### H9 Lastly, I used the following commands to reset the failed mysql, restart mysql, and check the status of mysql.
+
+ 'sudo systemctl reset-failed mysql'
+ 'sudo systemctl restart mysql'
+ 'sudo systemctl status mysql --no-pager'
