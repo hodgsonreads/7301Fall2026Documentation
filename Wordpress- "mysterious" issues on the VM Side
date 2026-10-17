@@ -1,8 +1,11 @@
-# About Site Loading Issues in Wordpress:
+# H1 About Site Loading Issues in Wordpress:
 Wordpress is the free, open-source Content Management System that we used as part of our Integrated Library System (ILS) Building Project.  Even after successfully installing Wordpress, issues can arise, such as the site failing to load.  An error I received while trying to load my site was “Database Connection Error”.  As mentioned on this GigaPress page, the error shows that Wordpress cannot connect to your MySQL database either due to incorrect database credentials or a crashed database table.
 
-## Checking the Status of MySQL:
+## H2 Checking the Status of MySQL:
 If you’re experiencing an error in database connection, it’s important to check the status of MySQL.  If the system is failing, you can check the amount of remaining disc storage available.  In order for MySQL to connect with Wordpress, there must be available storage.  It’s possible that a lack of storage could cause a disruption in the connectivity.
 
-### Adding more Disc Storage:
+### H3 Adding more Disc Storage:
 It's important to have available disc storage in your MySQL database in order to keep the site up and running and prevent future crashes. Adding a swapfile is one way to create more disc storage in MySQL. According to the [Understanding Swap Files] (https://medium.com/@adebanjoemmanuel01/understanding-swap-files-1967fe8c5c89) page on the website "Medium", swap files create space to store lesser proccesses, ultimately freeing space in your RAM. Freeing up space in your RAM will allow your site to load quicker.
+
+#### H4 How to:
+If you want more information regarding how to add a swapfile, please see the [How to Add a Swap File] () page.
